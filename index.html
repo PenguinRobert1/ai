@@ -1,52 +1,52 @@
-<html>
-<link rel="stylesheet" href="css.css">
-</html>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Classwork</title>
+    <title>Loading Screen Example</title>
     <style>
         body {
             margin: 0;
             padding: 0;
+            font-family: Arial, sans-serif;
         }
         
-        .sidebar {
-            width: 200px;
+        .loading-screen {
+            width: 100%;
             height: 100vh;
-            background-color: #333;
-            color: #fff;
-            padding-top: 20px;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         
-        .sidebar ul {
-            list-style-type: none;
-            padding-left: 0;
+        .loader {
+            border: 16px solid #f3f3f3; /* Light grey */
+            border-top: 16px solid #3498db; /* Blue */
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            animation: spin 2s linear infinite;
         }
         
-        .sidebar li {
-            margin-bottom: 10px;
-        }
-        
-        .content {
-            margin-left: 200px; /* Adjust this value to match the width of the sidebar */
-            padding: 20px;
+        @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
         }
     </style>
 </head>
 <body>
-    <div class="sidebar">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="ai.html">Services</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
+    <div class="loading-screen">
+        <div class="loader"></div>
     </div>
 
-    <div class="content">
-        <!-- Your main content goes here -->
-    </div>
+    <!-- Your main content goes here -->
+
+    <script>
+        // Simulating a delay to show the loading screen
+        setTimeout(function() {
+          document.querySelector('.loading-screen').style.display = 'none';
+          // Show your main content here by modifying the DOM or redirecting to another page
+        }, 3000); // Adjust the delay time (in milliseconds) as needed
+    </script>
 
 </body>
 </html>
