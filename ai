@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Chatbot</title>
+    <style>
+        .chat-container {
+            width: 400px;
+            height: 500px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            overflow-y: scroll;
+        }
+        
+        .user-message {
+            background-color: #f2f2f2;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+        
+        .ai-message {
+            background-color: #e6e6e6;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+        
+        .input-container {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="ai-message">Hello! How can I assist you today?</div>
+    </div>
+
+    <div class="input-container">
+        <input type="text" id="user-input" placeholder="Type your message...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <script>
+        function sendMessage() {
+            var userInput = document.getElementById("user-input").value;
+
+            // Display user message
+            var userMessageElement = document.createElement("div");
+            userMessageElement.className = "user-message";
+            userMessageElement.textContent = userInput;
+
+            document.querySelector(".chat-container").appendChild(userMessageElement);
+
+            // Process user input and generate AI response
+            var aiResponse = generateAIResponse(userInput);
+
+            // Display AI message
+            var aiMessageElement = document.createElement("div");
+            aiMessageElement.className = "ai-message";
+            aiMessageElement.textContent = aiResponse;
+
+            document.querySelector(".chat-container").appendChild(aiMessageElement);
+
+            // Clear user input
+            document.getElementById("user-input").value = "";
+        }
+
+        function generateAIResponse(userInput) {
+            // Implement your AI logic here to generate an appropriate response based on the user input
+            // This can involve natural language processing, machine learning, or other AI techniques
+
+            // For simplicity, let's just return a static response for now
+            return "I'm sorry, I am a simple AI and cannot provide a meaningful response.";
+        }
+    </script>
+</body>
+</html>
