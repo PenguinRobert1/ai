@@ -1,0 +1,24 @@
+<a href="index.html">home</a>
+<link rel="stylesheet" href="style.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Simulated Learning Script</title>
+</head>
+<body>
+<h1>Simulated Learning Script</h1>
+<p>Click the button to teach the script!</p>
+<button onclick="teachAI()">Teach Me!</button>
+<script>
+var learningData = {
+clicks: 0
+};
+
+function teachAI() {
+learningData.clicks++;
+console.log("I've learned something new! I've been taught " + learningData.clicks + " times.");
+}
+</script>
+</body>
+</html>
