@@ -11,13 +11,13 @@
 
 <script>
 function generateCode() {
-var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789?><';
+var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789?></.,';
 var codeLength = 8;
 var randomCode = '';
 for (var i = 0; i < codeLength; i++) {
 randomCode += characters.charAt(Math.floor(Math.random() * characters.length));
 }
-document.getElementById('codeOutput').innerText = 'Generated Code: ' + randomCode;
+document.getElementById('codeOutput').innerText = 'Generated Password: ' + randomCode;
 }
 </script>
 </body>
