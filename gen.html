@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Simple Code Generator</title>
+</head>
+<body>
+<h1>Simple Code Generator</h1>
+<button onclick="generateCode()">Generate Code</button>
+<p id="codeOutput"></p>
+
+<script>
+function generateCode() {
+var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+var codeLength = 8;
+var randomCode = '';
+for (var i = 0; i < codeLength; i++) {
+randomCode += characters.charAt(Math.floor(Math.random() * characters.length));
+}
+document.getElementById('codeOutput').innerText = 'Generated Code: ' + randomCode;
+}
+</script>
+</body>
+</html>
