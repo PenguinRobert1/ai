@@ -1,0 +1,32 @@
+<script>
+<?php
+
+use Carbon_Fields\Container;
+use Carbon_Fields\Field;
+
+add_action('carbon_fields_register_fields', 'cwpai_register_custom_fields');
+
+function cwpai_register_custom_fields() {
+    Container::make('post_meta', __('AI Teaching Script', 'codewp'))
+        ->where('post_type', '=', 'post')
+        ->add_fields([
+            Field::make('text', 'cwpai_ai_script_title', __('Script Title', 'codewp')),
+            Field::make('textarea', 'cwpai_ai_script_description', __('Script Description', 'codewp')),
+            Field::make('file', 'cwpai_ai_script_file', __('Upload Script File', 'codewp')),
+            Field::make('select', 'cwpai_ai_script_difficulty', __('Difficulty Level', 'codewp'))
+                ->set_options([
+                    'beginner' => __('Beginner', 'codewp'),
+                    'intermediate' => __('Intermediate', 'codewp'),
+                    'advanced' => __('Advanced', 'codewp')
+                ]),
+        ]);
+}
+
+add_action('after_setup_theme', 'cwpai_load_carbon_fields');
+
+function cwpai_load_carbon_fields() {
+    
+    
+    \Carbon_Fields\Carbon_Fields::boot();
+}
+</script>
