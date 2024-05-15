@@ -7,18 +7,18 @@
 </head>
 <body>
 <h1>Simple Password Generator</h1>
-<button onclick="generateCode()">Gen Password</button>
+<button onclick="generatepassword()">Gen Password</button>
 <p id="codeOutput"></p>
 
 <script>
-function generateCode() {
+function generatepassword() {
 var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789?></.,":\|}]{[]}';
 var passwordLength = 8;
-var randomCode = '';
+var randompassword = '';
 for (var i = 0; i < passwordLength; i++) {
-randomCode += characters.charAt(Math.floor(Math.random() * characters.length));
+randompassword += characters.charAt(Math.floor(Math.random() * characters.length));
 }
-document.getElementById('codeOutput').innerText = 'Generated Password: ' + randomCode;
+document.getElementById('codeOutput').innerText = 'Generated Password: ' + randompassword;
 }
 </script>
 </body>
