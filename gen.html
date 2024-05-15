@@ -12,9 +12,9 @@
 <script>
 function generateCode() {
 var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789?></.,":\|}]{[]}';
-var codeLength = 8;
+var passwordLength = 8;
 var randomCode = '';
-for (var i = 0; i < codeLength; i++) {
+for (var i = 0; i < passwordLength; i++) {
 randomCode += characters.charAt(Math.floor(Math.random() * characters.length));
 }
 document.getElementById('codeOutput').innerText = 'Generated Password: ' + randomCode;
