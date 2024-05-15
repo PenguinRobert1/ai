@@ -8,7 +8,7 @@
 <body>
 <h1>Simple Password Generator</h1>
 <button onclick="generatepassword()">Gen Password</button>
-<p id="codeOutput"></p>
+<p id="passwordOutput"></p>
 
 <script>
 function generatepassword() {
@@ -18,7 +18,7 @@ var randompassword = '';
 for (var i = 0; i < passwordLength; i++) {
 randompassword += characters.charAt(Math.floor(Math.random() * characters.length));
 }
-document.getElementById('codeOutput').innerText = 'Generated Password: ' + randompassword;
+document.getElementById('passowrdOutput').innerText = 'Generated Password: ' + randompassword;
 }
 </script>
 </body>
